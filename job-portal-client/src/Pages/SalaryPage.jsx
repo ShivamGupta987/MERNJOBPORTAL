@@ -14,8 +14,8 @@ const SalaryPage = () => {
         const filter = salary.filter((job) =>
             job.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
         );
-        console.log(filter); // Now this is inside the handleSearch scope
-        setSalary(filter);    // This too
+        console.log(filter); //  handleSearch scope
+        setSalary(filter);    
     };
 
 
