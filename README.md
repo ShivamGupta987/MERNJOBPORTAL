@@ -32,9 +32,7 @@ This project utilizes a robust stack of technologies to ensure a high-quality us
 
 We welcome contributions from the community. If you're interested in helping improve our job portal, please fork the repository and create a pull request with your changes.
 
-## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
