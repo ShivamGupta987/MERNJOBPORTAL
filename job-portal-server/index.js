@@ -9,8 +9,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 
-// user: sg804595
-// pass :ynocIsyGB7MUVQDg
+
 
 // mongodb
 
