@@ -4,12 +4,6 @@ import { FiMapPin, FiSearch } from 'react-icons/fi';
 const Banner = ({query,handleInputChange}) => {
     // const [query, setQuery] = useState('');
 
-    // const handleInputChange = (event) => {
-    //   setQuery(event.target.value);
-    //   // console.log(event.target.value)
-    // };
- 
-    // this is used in home section rather banner section
 
   return (
     <div className='max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-14'>
