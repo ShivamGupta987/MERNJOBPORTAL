@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import PageHeader from "../components/PageHeader";
 
 const JobDetails = () => {
