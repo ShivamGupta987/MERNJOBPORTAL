@@ -11,7 +11,7 @@ const JobDetails = () => {
     fetch(`http://localhost:5000/all-jobs/${id}`)
       .then((res) => res.json())
       .then((data) => setJob(data));
-  }, [id]); // Add `id` as a dependency to re-fetch if the id changes
+  }, [id]);
 
   const handleApply = async () => {
     const { value: url } = await Swal.fire({
