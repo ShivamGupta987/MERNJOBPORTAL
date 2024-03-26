@@ -17,23 +17,23 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    // fetch("jobs.json") through file
+
     fetch("http://localhost:5000/all-jobs ")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data)
+
         setJobs(data);
         setLoading(false);
       });
   }, []);
-  // console.log(jobs)
+
 
   // handle input change
 
   const [query, setQuery] = useState("");
   const handleInputChange = (event) => {
     setQuery(event.target.value);
-    // console.log(event.target.value)
+
   };
 
   // filter jobs by title
@@ -41,20 +41,19 @@ const Home = () => {
   const filteredItems = jobs.filter(
     (job) => job.jobTitle.toLowerCase().indexOf(query.toLowerCase()) !== -1
   );
-  // console.log(filteredItems)
 
-  //------- Radio base button filtering ----------
+
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
   
   };
 
-  // ---- button base filtering --------
+
 
   const handleClick = (event) => {
     setSelectedCategory(event.target.value);
   };
-  // calculate the index range
+
 
   const calculatePageRange = () => {
     const startIndex = (curreentPage - 1) * itemsPerPage;
@@ -77,7 +76,6 @@ const Home = () => {
     }
   };
 
-  // -----------main function -------
 
   const filteredData = (jobs, selected, query) => {
     let filteredJobs = jobs;
@@ -97,8 +95,7 @@ const Home = () => {
           employmentType,
           postingDate,
         }) =>
-      // postingDate >= selected 
-      // for date posting isliye selecteed likhe wrna rok nhi krega
+
       jobLocation.toLowerCase() === selected.toLowerCase() ||
       parseInt(maxPrice) <= parseInt(selected) || 
       postingDate >= selected ||
@@ -135,7 +132,7 @@ const Home = () => {
         {/* job cards */}
 
         <div className="col-span-2 bg-white p-4 rounded-sm">
-          {/*   // is loading ternary operator is loading true show loading else show jobs  */}
+        
           {loading ? (
             <p className="font-medium">Loading....</p>
           ) : result.length > 0 ? (
