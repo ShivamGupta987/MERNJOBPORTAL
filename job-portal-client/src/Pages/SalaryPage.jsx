@@ -4,7 +4,7 @@ import PageHeader from '../components/PageHeader'
 const SalaryPage = () => {
     const [searchText,setSearchText] = useState("")
     const [salary,setSalary] = useState([]) ;
-    // console.log(searchText)
+
     useEffect( () => {
         fetch("salary.json").then(res => res.json()).then(data => setSalary(data))
 
@@ -14,7 +14,7 @@ const SalaryPage = () => {
         const filter = salary.filter((job) =>
             job.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
         );
-        console.log(filter); //  handleSearch scope
+        console.log(filter); 
         setSalary(filter);    
     };
 
