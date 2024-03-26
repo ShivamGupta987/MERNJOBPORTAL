@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FiMapPin, FiSearch } from 'react-icons/fi';
 
 const Banner = ({query,handleInputChange}) => {
-    // const [query, setQuery] = useState('');
 
 
   return (
