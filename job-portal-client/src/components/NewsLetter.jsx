@@ -8,25 +8,24 @@ const NewsLetter = () => {
     const [response,setResponse] = useState("")
     const handleSubmit = (e) => {
         e.preventDefault();
-    
-        // Assuming `prompt` is a state variable holding the input you want to send
+
         const requestBody = {
             prompt: prompt,
         };
     
         fetch("http://localhost:5000/chat", {
-            method: 'POST', // Specify the method
+            method: 'POST',
             headers: {
-                'Content-Type': 'application/json', // Specify the content type
+                'Content-Type': 'application/json', 
             },
-            body: JSON.stringify(requestBody), // Convert the JavaScript object to a JSON string
+            body: JSON.stringify(requestBody), 
         })
-        .then((res) => res.json()) // Convert the response to JSON
+        .then((res) => res.json()) 
         .then((data) => {
-            setResponse(data); // Assuming `data` is the response you want to store
+            setResponse(data); 
         })
         .catch((err) => {
-            console.error(err); // Log any errors to the console
+            console.error(err); 
         });
     };
     
