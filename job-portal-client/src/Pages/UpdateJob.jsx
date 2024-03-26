@@ -21,13 +21,13 @@ const {
 } = useForm();
 
 const onSubmit = (data) => {
-  // console.log(data);
+
   fetch(`http://localhost:5000/update-job/${id}`, {
-    method: 'PATCH', // Specify the method.
+    method: 'PATCH', 
     headers: {
-        'Content-Type': 'application/json', // Specify the content type.
+        'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data) // Convert the data to a JSON string.
+    body: JSON.stringify(data) 
 })
     .then((res) => res.json())
     .then((result) => {
