@@ -12,7 +12,6 @@ const JobDetails = () => {
       .then((res) => res.json())
       .then((data) => setJob(data));
   }, [id]); // Add `id` as a dependency to re-fetch if the id changes
-
   const handleApply = async () => {
     const { value: url } = await Swal.fire({
       input: "url",
@@ -23,13 +22,11 @@ const JobDetails = () => {
       Swal.fire(`Entered URL: ${url}`);
     }
   };
-
   return (
     <div className="max-w-screen-2xl container mx-auto  xl:px-24">
       <PageHeader title={"Single Job Page"} path={'single Job'}/>
       <h2>Job Details : {id}</h2>
       <h1>{job.jobTitle}</h1>
-
       <button
         className="bg-blue-600 px-8 py-2 text-white "
         onClick={handleApply}
