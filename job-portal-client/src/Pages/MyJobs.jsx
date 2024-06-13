@@ -48,10 +48,6 @@ const MyJobs = () => {
     }
   }
 
-
-
-
-
   const handleSearch = () =>{
       const filter = jobs.filter((job) => job.jobTitle.toLowerCase().indexOf(searchText.toLowerCase()) !== -1);
     //   console.log(filter)
