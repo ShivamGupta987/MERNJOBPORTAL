@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const MyJobs = () => {
-  // const email = "sg804595@gmail.com"
+
 
   const [jobs, setJobs] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -50,14 +50,12 @@ const MyJobs = () => {
 
   const handleSearch = () =>{
       const filter = jobs.filter((job) => job.jobTitle.toLowerCase().indexOf(searchText.toLowerCase()) !== -1);
-    //   console.log(filter)
     setJobs(filter)
-    // if data filter setisloading false 
     setIsLoading(false)
 
   }
   const handleDelete = (id) => {
-    // console.log(id)
+
     fetch(`http://localhost:5000/job/${id}`,{
       method : 'DELETE'
     }).then(res => res.json).then(data => {
@@ -67,7 +65,7 @@ const MyJobs = () => {
       }
     })
   }
-//   console.log(searchText)
+
   return (
     <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4">
   

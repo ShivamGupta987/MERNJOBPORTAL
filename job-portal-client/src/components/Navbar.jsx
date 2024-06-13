@@ -4,7 +4,7 @@ import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuToggler = () => {
-    // FOR TOOGLE CONDITION
+
     setIsMenuOpen(!isMenuOpen);
   };
   const navItems = [
@@ -20,7 +20,7 @@ const Navbar = () => {
           JobPortal
         </a>
 
-        {/* nav items for large devices */}
+ 
         <ul className="hidden md:flex gap-12">
           {navItems.map(({ path, title }) => (
             <li key={path} className="text-base text-primary ">
@@ -34,7 +34,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* signup login btn */}
+
         <div className="text-base text-primary font-medium space-x-5 lg:block hidden">
         <Link to="/login" className="py-2 px-5 border rounded transition duration-300 ease-in-out hover:bg-gray-200 hover:text-gray-800">
   Log in
@@ -47,7 +47,6 @@ const Navbar = () => {
 </Link>
         </div>
 
-        {/* mobile menu  */}
 
         <div className="md:hidden block ">
           <button onClick={handleMenuToggler}>
@@ -60,7 +59,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/*  Navitesm for mobile */}
+      
       <div
         className={`px-4 bg-black py-5 rounded-sm ${
           isMenuOpen ? "" : "hidden"

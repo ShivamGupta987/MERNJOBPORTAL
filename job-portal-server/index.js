@@ -4,61 +4,15 @@ const cors = require("cors");
 const port = process.env.PORT || 5000;
 require("dotenv").config();
 
-// Express middleware
 app.use(express.json());
 app.use(cors());
 
 
 
 
-// const openai = new OpenAI({
-//   apiKey: process.env.OPEN_AI_KEY,
-// });
-// app.post('/chat', async (req, res) => {
-//   const { prompt } = req.body;
-
-//   try {
-//     const response = await openai.createChatCompletion({
-//       model: "gpt-3.5-turbo", // Make sure this model is available for your use
-//       messages: [
-//         {
-//           role: "system",
-//           content: "You are a helpful assistant."
-//         },
-//         {
-//           role: "user",
-//           content: prompt,
-//         },
-//       ],
-//       max_tokens:50
-//     });
-
-//     // Assuming the response format has the messages array
-//     if (response.data && response.data.choices && response.data.choices.length > 0) {
-//       const messages = response.data.choices[0].message.content;
-//       res.json({ messages });
-//     } else {
-//       res.status(500).send('Failed to receive a valid response from OpenAI.');
-//     }
-//   } catch (error) {
-//     console.error('Error calling OpenAI:', error);
-//     res.status(500).send('An error occurred while processing your request.');
-//   }
-// });
-
-// I have this in my MERN stack code file, and it works well.
-
-
-// Explain
-
-// mongodb
-
 const { MongoClient, ServerApiVersion,ObjectId } = require("mongodb");
-// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@job-portal-demo.jouxbiv.mongodb.net/?retryWrites=true&w=majority`;
-// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}cluster0.l5zplg1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.l5zplg1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.l5zplg1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -70,8 +24,6 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
-
-    // create db
 
     const db = client.db("mernJobPortal");
     const jobsCollections = db.collection("demoJobs");

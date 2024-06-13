@@ -8,9 +8,30 @@ const NewsLetter = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Assuming `prompt` is a state variable holding the input you want to send
-    const requestBody = {
-      prompt: prompt,
+    const [prompt, setPrompt] = useState("");
+    const [response, setResponse] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const requestBody = {
+            prompt: prompt,
+        };
+
+        fetch("http://localhost:5000/chat", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody),
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            setResponse(data);
+        })
+        .catch((err) => {
+            console.error(err);
+        });
     };
 
     fetch("http://localhost:5000/chat", {

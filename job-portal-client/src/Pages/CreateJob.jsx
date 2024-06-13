@@ -12,13 +12,13 @@ const CreateJob = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    // console.log(data);
+   
     fetch("http://localhost:5000/post-job", {
-      method: 'POST', // Specify the method.
+      method: 'POST', 
       headers: {
-          'Content-Type': 'application/json', // Specify the content type.
+          'Content-Type': 'application/json', 
       },
-      body: JSON.stringify(data) // Convert the data to a JSON string.
+      body: JSON.stringify(data)
   })
       .then((res) => res.json())
       .then((result) => {
@@ -30,7 +30,7 @@ const CreateJob = () => {
         reset();
       });
   };
-  // for selecting
+
   const options = [
     { value: "JavaScript", label: "JavaScript" },
     { value: "c++", label: "c++" },
