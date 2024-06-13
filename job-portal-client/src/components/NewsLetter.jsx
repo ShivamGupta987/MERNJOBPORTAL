@@ -3,33 +3,32 @@ import { FaEnvelopeOpenText, FaRocket } from "react-icons/fa6";
 import axios from "axios";
 
 const NewsLetter = () => {
+  const [prompt, setPrompt] = useState("");
+  const [response, setResponse] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const [prompt,setPrompt] = useState("");
-    const [response,setResponse] = useState("")
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    
-        // Assuming `prompt` is a state variable holding the input you want to send
-        const requestBody = {
-            prompt: prompt,
-        };
-    
-        fetch("http://localhost:5000/chat", {
-            method: 'POST', // Specify the method
-            headers: {
-                'Content-Type': 'application/json', // Specify the content type
-            },
-            body: JSON.stringify(requestBody), // Convert the JavaScript object to a JSON string
-        })
-        .then((res) => res.json()) // Convert the response to JSON
-        .then((data) => {
-            setResponse(data); // Assuming `data` is the response you want to store
-        })
-        .catch((err) => {
-            console.error(err); // Log any errors to the console
-        });
+    // Assuming `prompt` is a state variable holding the input you want to send
+    const requestBody = {
+      prompt: prompt,
     };
-    
+
+    fetch("http://localhost:5000/chat", {
+      method: "POST", // Specify the method
+      headers: {
+        "Content-Type": "application/json", // Specify the content type
+      },
+      body: JSON.stringify(requestBody), // Convert the JavaScript object to a JSON string
+    })
+      .then((res) => res.json()) // Convert the response to JSON
+      .then((data) => {
+        setResponse(data); // Assuming `data` is the response you want to store
+      })
+      .catch((err) => {
+        console.error(err); // Log any errors to the console
+      });
+  };
+
   return (
     <div>
       <div>
@@ -79,20 +78,23 @@ const NewsLetter = () => {
 
       {/* cathd */}
       <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="textInput">Text Input:</label>
-        <input
-          type="text"
-          id="textInput"
-          value={prompt}
-          onChange={(e)=> setPrompt(e.target.value)}
-        />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-  
-
-
+        <div className="m-4  ">
+          <label htmlFor="textInput">Text Input:</label>
+          <input
+            className=" text-white border-black"
+            type="text"
+            id="textInput"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+          />
+        </div>
+        <button
+          className="w-full block py-2 pl-3 border focus:outline-none bg-blue-500 rounded-sm text-white cursor-pointer font-semibold transition duration-300 ease-in-out hover:bg-blue-600 hover:text-white"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
     </div>
   );
 };
