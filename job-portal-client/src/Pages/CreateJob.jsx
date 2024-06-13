@@ -202,10 +202,12 @@ const CreateJob = () => {
             />
           </div>
 
-          <input
-            type="submit"
-            className="block mt-12 bg-blue-500text-white font-semibold rounded-sm cursor-pointer"
-          />
+          <button
+          className="w-full block py-2 pl-3 border focus:outline-none bg-blue-500 rounded-sm text-white cursor-pointer font-semibold transition duration-300 ease-in-out hover:bg-blue-600 hover:text-white"
+          type="submit"
+        >
+          Submit
+        </button>
         </form>
       </div>
     </div>
