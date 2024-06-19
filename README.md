@@ -28,9 +28,7 @@ This project utilizes a robust stack of technologies to ensure a high-quality us
 - **Express:** A minimal and flexible Node.js web application framework, providing a robust set of features for web and mobile applications.
 - **MongoDB:** A NoSQL database, used for storing user and job data efficiently.
 
-## Contributing
 
-We welcome contributions from the community. If you're interested in helping improve our job portal, please fork the repository and create a pull request with your changes.
 
 
 
